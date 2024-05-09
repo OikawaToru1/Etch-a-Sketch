@@ -1,0 +1,22 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+#container
+{   display: flex;
+    flex-grow: 1;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 512px;
+    height: 512px;
+}
+
+
+.change
+{
+    margin-top: 55px;
+}
