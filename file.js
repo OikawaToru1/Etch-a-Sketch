@@ -1,33 +1,53 @@
-const box = document.getElementById("container");
-let noOfBoxes=16;
-let boxDimension=30;
-const btn = document.querySelector("button").addEventListener("click",()=>{
-     noOfBoxes = prompt("Enter the no of boxes per cum");
-     boxDimension = 512/noOfBoxes -2 ;
-});
-console.log(boxDimension);
+let container = document.querySelector(".container");
+let changeGrid = document.querySelector(".btn");
+let reset = document.querySelector(".reset");
 
-for(i=0;i<noOfBoxes;i++)
+let noOfBox = 16;
+let sizeofBox = 30;
+container.style.height=container.style.width="512px";
+
+
+function createGrid(totalBox,boxSize)
 {
-    for(j=0; j<noOfBoxes; j++)
+    for(i=0;i<totalBox;i++)
         {
-            const div = document.createElement("div");
-            div.classList.add("grid");
-            div.style.border="1px solid blue";
-            div.style.height=`30px`;
-            div.style.width =`30px`;
-            box.append(div);
+            for(j=0;j<totalBox;j++)
+                {
+                    const box = document.createElement("div");
+                    box.classList.add("grid");
+                    box.style.border = "1px solid black";
+                    box.style.height = boxSize+"px";
+                    box.style.width = boxSize+"px";
+                    container.appendChild(box);
+                    box.addEventListener("mouseover",()=>{
+                        box.style.backgroundColor= "pink";
+                    })
+                }
         }
+        
 }
 
-const quard = document.querySelectorAll(".grid");
+function userInput()
+{
+    noOfBox = prompt("Enter size of new grid, less than 100 ","50");
+    noOfBox = parseInt(noOfBox);
+    sizeofBox = (512/noOfBox) -2 ;
+    parseInt(sizeofBox);
+    createGrid(noOfBox,sizeofBox);
+}
 
-quard.forEach((boxu)=>{
-    boxu.addEventListener("mouseover",()=>{
-        boxu.style.backgroundColor="pink";
-    })
-   
-})
+
+function clear()
+{
+    let boxes = document.querySelectorAll(".grid");
+    boxes.forEach((boxu)=>{
+    boxu.style.backgroundColor= "White";
+});
+
+}
+
+changeGrid.addEventListener("click",userInput);
+reset.addEventListener("click",clear);
 
 
 
