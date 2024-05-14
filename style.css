@@ -4,19 +4,24 @@
     margin: 0;
 }
 
-#container
+.container
 {   display: flex;
     flex-grow: 1;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 100px;
     flex-wrap: wrap;
     border: 1px solid black;
-    width: 512px;
-    height: 512px;
+    max-height: 512px;
+    max-width: 512px;
 }
 
 
-.change
+.btn
 {
-    margin-top: 55px;
+    margin-top: 30px;
+}
+
+.btn :active
+{
+    margin-top: 30px;
 }
