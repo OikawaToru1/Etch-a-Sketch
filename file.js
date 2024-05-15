@@ -33,6 +33,11 @@ function userInput()
     noOfBox = parseInt(noOfBox);
     sizeofBox = (512/noOfBox) -2 ;
     parseInt(sizeofBox);
+    let boxes = document.querySelectorAll(".grid");
+    boxes.forEach((boxu)=>{
+    boxu.remove();
+});
+
     createGrid(noOfBox,sizeofBox);
 }
 
@@ -45,6 +50,7 @@ function clear()
 });
 
 }
+createGrid(noOfBox,sizeofBox);
 
 changeGrid.addEventListener("click",userInput);
 reset.addEventListener("click",clear);
