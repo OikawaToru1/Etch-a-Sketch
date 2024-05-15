@@ -1,7 +1,7 @@
 let container = document.querySelector(".container");
 let changeGrid = document.querySelector(".btn");
 let reset = document.querySelector(".reset");
-
+let colorChanger = document.querySelectorAll(".change");
 let noOfBox = 16;
 let sizeofBox = 30;
 container.style.height=container.style.width="512px";
@@ -31,12 +31,12 @@ function userInput()
 {
     noOfBox = prompt("Enter size of new grid, less than 100 ","50");
     noOfBox = parseInt(noOfBox);
-    sizeofBox = (512/noOfBox) -2 ;
+    sizeofBox = (512/noOfBox)-2 ;
     parseInt(sizeofBox);
     let boxes = document.querySelectorAll(".grid");
     boxes.forEach((boxu)=>{
     boxu.remove();
-});
+    });
 
     createGrid(noOfBox,sizeofBox);
 }
@@ -54,7 +54,3 @@ createGrid(noOfBox,sizeofBox);
 
 changeGrid.addEventListener("click",userInput);
 reset.addEventListener("click",clear);
-
-
-
-
